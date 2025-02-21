@@ -18,14 +18,12 @@ def ll_cords(toponym_to_find):
     return toponym_coodrinates.split(" ")[::-1]
 
 
-def show_find(adress='', cords=''):
+def show_find(delta, adress='', cords=''):
     if adress:
         ll = ll_cords(adress)
-        print(ll)
     if cords:
         ll = list(map(str, cords))[::-1]
-        print(ll)
-    delta = "0.005"
+
     apikey = "46f543e5-8557-4b4f-92bc-8fbd63dcd53d"
     org_point = f'{ll[1]},{ll[0]}'
 
@@ -38,7 +36,6 @@ def show_find(adress='', cords=''):
     print(map_params)
     map_api_server = "https://static-maps.yandex.ru/v1"
     response = requests.get(map_api_server, params=map_params)
-    print(response)
     im = BytesIO(response.content)
     opened_image = Image.open(im)
     opened_image.save('pick_me.png')
