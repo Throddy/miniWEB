@@ -1,6 +1,8 @@
 from PyQt6.QtWidgets import QMainWindow, QApplication
 from PyQt6 import uic
+from PyQt6.QtGui import QPixmap, QImage
 import sys
+from funcs import ll_cords, show_find
 
 
 class MiniMaps(QMainWindow):
@@ -9,6 +11,11 @@ class MiniMaps(QMainWindow):
         uic.loadUi('design.ui', self)
 
         self.find_btn.clicked.connect(self.find)
+        show_find(cords1=54.9557386, cords2=20.2436099)
+        self.pixmap = QPixmap.fromImage(QImage('pick_me.png'))
+        self.map.setPixmap(self.pixmap)
+        self.map.resize(500, 500)
+
 
     def find(self):
         ...

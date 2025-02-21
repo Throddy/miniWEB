@@ -14,11 +14,11 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
+      <x>0</x>
+      <y>20</y>
       <width>502</width>
       <height>66</height>
      </rect>
@@ -70,14 +70,20 @@
        </item>
       </layout>
      </item>
-     <item>
-      <widget class="QLabel" name="map">
-       <property name="text">
-        <string>Введите координаты или адресс и нажмите кнопку искать</string>
-       </property>
-      </widget>
-     </item>
     </layout>
+   </widget>
+   <widget class="QLabel" name="map">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>100</y>
+      <width>781</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Введите координаты или адресс и нажмите кнопку искать</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

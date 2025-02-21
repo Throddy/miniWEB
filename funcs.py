@@ -3,6 +3,7 @@ import requests
 from PIL import Image
 
 
+
 def ll_cords(toponym_to_find):
     geocoder_api_server = "http://geocode-maps.yandex.ru/1.x/"
     geocoder_params = {
@@ -42,7 +43,7 @@ def show_find(adress='', cords1='', cords2=''):
     print(response)
     im = BytesIO(response.content)
     opened_image = Image.open(im)
-    opened_image.show()
+    opened_image.save('pick_me.png')
 
 
 show_find(adress="Калининград")
