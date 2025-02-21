@@ -6,18 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>685</width>
+    <height>474</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(134, 177, 255)</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>20</y>
       <width>502</width>
       <height>66</height>
@@ -75,10 +78,10 @@
    <widget class="QLabel" name="map">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>100</y>
-      <width>781</width>
-      <height>21</height>
+      <width>510</width>
+      <height>600</height>
      </rect>
     </property>
     <property name="text">
@@ -91,7 +94,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>685</width>
      <height>21</height>
     </rect>
    </property>

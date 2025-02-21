@@ -3,7 +3,6 @@ import requests
 from PIL import Image
 
 
-
 def ll_cords(toponym_to_find):
     geocoder_api_server = "http://geocode-maps.yandex.ru/1.x/"
     geocoder_params = {
@@ -19,18 +18,17 @@ def ll_cords(toponym_to_find):
     return toponym_coodrinates.split(" ")[::-1]
 
 
-def show_find(adress='', cords1='', cords2=''):
+def show_find(adress='', cords=''):
     if adress:
         ll = ll_cords(adress)
         print(ll)
-    if cords1 and cords2:
-        ll = (str(cords1), str(cords2))
+    if cords:
+        ll = list(map(str, cords))[::-1]
         print(ll)
     delta = "0.005"
     apikey = "46f543e5-8557-4b4f-92bc-8fbd63dcd53d"
     org_point = f'{ll[1]},{ll[0]}'
 
-    # Собираем параметры для запроса к StaticMapsAPI:
     map_params = {
         "ll": ",".join([ll[1], ll[0]]),
         "spn": ",".join([delta, delta]),
@@ -44,6 +42,3 @@ def show_find(adress='', cords1='', cords2=''):
     im = BytesIO(response.content)
     opened_image = Image.open(im)
     opened_image.save('pick_me.png')
-
-
-show_find(adress="Калининград")
